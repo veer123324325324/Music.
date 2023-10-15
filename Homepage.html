@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Music Site</title>
+    <link rel="stylesheet" href="styles.css" />    
+    <link rel="stylesheet" href="script.js"/>
+    
+  </head>
+  <body>
+
+
+  
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <input type="text" id="searchInput" placeholder="Search products">
+    <div id="searchResults" class="search-results"></div>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const searchResults = document.getElementById("searchResults");
+
+        searchInput.addEventListener("input", debounce(handleSearch, 300));
+
+        async function handleSearch() {
+            const query = searchInput.value;
+
+            if (query.length === 0) {
+                searchResults.innerHTML = "";
+                return;
+            }
+
+            const mockData = [
+                "Product 1",
+                "Product 2",
+                "Product 3",
+                "Stay",  
+                "Product 4",
+                "Product 5",
+                "Product 6",
+                "Product 7",
+            ];
+
+            const results = mockData.filter((item) =>
+                item.toLowerCase().includes(query.toLowerCase())
+            );
+
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            const html = results
+                .map((result) =>
+                    result === "Stay"
+                        ? `<a class="result-item" href="stay.html">${result}</a>`
+                        : `<div class="result-item">${result}</div>`
+                )
+                .join("");
+
+            searchResults.innerHTML = html;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, arguments), wait);
+            };
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav>
+  <center><div class="menu-icon">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <ul class="menu">
+    <li><a href="Account.html">Account</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+  </ul></center>
+</nav>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.menu-icon').click(function () {
+      $('.menu').slideToggle();
+    });
+  });
+</script>
+   
+<script src="script.js"></script>
+<a href="login.html" id="login-button">Login</a>
+    <header>
+      <div class="container">
+        <a href="Sign up.html" class="right-corner-link">Sign up</a>
+    </div>
+      <div class="corner-buttons">
+       
+        
+    </div>
+      <h1>Welcome to My Music Site</h1>
+      <p>Your favorite tunes are just a click away!</p>
+    </header>
+
+    <nav>
+      <ul>
+         <li><a href="GanaList.html">Start Listening</a></li>
+        <li><a href="Artists.html">Artists</a></li>
+        <li><a href="Playlist.html">Playlists</a></li>
+        <li><a href="Albums.html">Album</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        
+      </ul>
+    </nav>
+    <main>
+      <section class="music-list">
+        <h2>Popular Tracks</h2>
+        <ul>
+          <li>
+            <h3>bones</h3>
+            <audio controls>
+              <source src="song1.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </li>
+          <div>
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+</div>
+          <li>
+            <h3>ABCDEFU</h3>
+            <audio controls>
+              <source src="song2.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </li>
+          <div>
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+</div>
+          <!-- Add more songs as needed -->
+        </ul>
+      </section>
+    </main>
+
+   
+    <footer>
+      <p>&copy; 2023 My Music Site. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

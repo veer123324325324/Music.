@@ -1,0 +1,15 @@
+/* Styles for the music player container */
+.music-player {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Style for the music controls and playlist */
+.music-controls button, #volume-slider {
+    margin: 5px;
+}
+
+/* Style for the playlist */
+.playlist {
+    text-align: left;
+}

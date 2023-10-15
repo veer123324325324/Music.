@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Sign up.css"      
+  </head>
+  <body>
+    
+    <form id="signup-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" required><br>
+
+        <label for="about">About Me:</label>
+        <textarea id="about" rows="4" required></textarea><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Store user data in localStorage (for demo purposes only)
+            const userData = {
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                name: document.getElementById("name").value,
+                location: document.getElementById("location").value,
+                about: document.getElementById("about").value
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+            alert("Sign up successful. Click OK to view your details.");
+            window.location.href = "userdata.html";
+        });
+    </script>
+  </body>
+</html>
